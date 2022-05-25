@@ -46,6 +46,21 @@ virtenv_prompt() {
 	echo "${YS_THEME_VIRTUALENV_PROMPT_PREFIX}${VIRTUAL_ENV:t}${YS_THEME_VIRTUALENV_PROMPT_SUFFIX}"
 }
 
+# # python version info
+# local python_version_info='$(python_version_prompt_info)'
+# python_version_prompt_info() {
+#   if command -v python > /dev/null 2>&1; then
+#     # PYTHON_VERSION="$(python -V 2>&1)"
+#     # PYTHON_VERSION=${PYTHON_VERSION/Python /Python}
+#     # PYTHON_VERSION=${PYTHON_VERSION/ */}
+#     CONDA_DEFAULT_ENV_NAME=''
+#     if [ -n "$CONDA_DEFAULT_ENV" ]; then
+#       CONDA_DEFAULT_ENV_NAME="$CONDA_DEFAULT_ENV"
+#     fi
+#     echo -n " %{$fg[yellow]%}(${CONDA_DEFAULT_ENV_NAME})%{$reset_color%}"
+#   fi
+# }
+
 local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 
 # Prompt format:
@@ -57,8 +72,7 @@ local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 #
 # % ys @ ys-mbp in ~/.oh-my-zsh on git:master x [21:47:42] C:0
 # $
-PROMPT="
-%{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
+PROMPT="%{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
 %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
 %{$fg[white]%}@ \
 %{$fg[green]%}%m \
