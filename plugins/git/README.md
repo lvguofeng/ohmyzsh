@@ -130,6 +130,7 @@ plugins=(... git)
 | grbd                 | git rebase $(git_develop_branch)                                                                                                 |
 | grbi                 | git rebase -i                                                                                                                    |
 | grbm                 | git rebase $(git_main_branch)                                                                                                    |
+| grbom                | git rebase origin/$(git_main_branch)                                                                                             |
 | grbo                 | git rebase --onto                                                                                                                |
 | grbs                 | git rebase --skip                                                                                                                |
 | grev                 | git revert                                                                                                                       |
@@ -180,6 +181,8 @@ plugins=(... git)
 | gupv                 | git pull --rebase -v                                                                                                             |
 | gupa                 | git pull --rebase --autostash                                                                                                    |
 | gupav                | git pull --rebase --autostash -v                                                                                                 |
+| gupom                | git pull --rebase origin $(git_main_branch)                                                                                      |
+| gupomi               | git pull --rebase=interactive origin $(git_main_branch)                                                                          |
 | glum                 | git pull upstream $(git_main_branch)                                                                                             |
 | gwch                 | git whatchanged -p --abbrev-commit --pretty=medium                                                                               |
 | gwip                 | git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"           |
